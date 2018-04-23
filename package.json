@@ -1,8 +1,8 @@
 {
-    "name": "boffice-index",
+    "name": "bo-index",
     "version": "1.0.0",
     "description": "",
-    "main": "index.js",
+    "main": "index.jsx",
     "scripts": {
         "start": "webpack-dev-server --open  --watch-poll  --config webpack.dev.js",
         "build": "webpack --config webpack.prod.js",
