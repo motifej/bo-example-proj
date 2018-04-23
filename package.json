@@ -6,11 +6,8 @@
     "scripts": {
         "start": "webpack-dev-server --open  --watch-poll  --config webpack.dev.js",
         "build": "webpack --config webpack.prod.js",
-        "precommit": "lint-staged",
-        "lint": "eslint src"
-    },
-    "lint-staged": {
-        "*.{js,jsx}": ["./node_modules/.bin/eslint --fix", "git add"]
+        "lint": "eslint src",
+        "precommit": "eslint src"
     },
     "author": "",
     "license": "ISC",
