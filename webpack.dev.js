@@ -15,6 +15,6 @@ module.exports = merge(common, {
             colors: true
         },
 
-        port: 9000
+        port: 8000
     }
 });

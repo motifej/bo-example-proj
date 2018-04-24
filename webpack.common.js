@@ -7,7 +7,7 @@ const common = {
     entry: path.join(APP_DIR, "/index.jsx"),
     output: {
         path: BUILD_DIR,
-        filename: "bundle.js",
+        filename: "bundle.1.js",
         library: ["test"],
         libraryTarget: "umd"
     },

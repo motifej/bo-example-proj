@@ -1,6 +1,9 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { render } from "react-dom";
 import App from "./App.jsx";
+
+if (!process.env.NODE_ENV || process.env.NODE_ENV === "development")
+    render(<App />, document.getElementById("root"));
 
 export default {
     show: props => {
