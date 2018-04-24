@@ -1,5 +1,9 @@
 import React from "react";
-import { render } from "react-dom";
+import ReactDOM from "react-dom";
 import App from "./App.jsx";
 
-render(<App />, document.getElementById("root"));
+export default {
+    show: props => {
+        return ReactDOM.render(<App />, document.getElementById("root"));
+    }
+};
