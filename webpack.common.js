@@ -8,8 +8,7 @@ const common = {
     output: {
         path: BUILD_DIR,
         filename: "bundle.1.js",
-        library: ["test"],
-        libraryTarget: "umd"
+        library: ["test"]
     },
 
     module: {
