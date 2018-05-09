@@ -7,34 +7,30 @@ import { ConnectedRouter } from "react-router-redux";
 import history from "./history";
 import store from "./store";
 import { HashRouter, Switch } from "react-router-dom";
-import TestRouter from "./containers/TestRouter";
-import TestReactInternalStateContainer from "./containers/TestReactInternalStateContainer";
 
-const NavigateBack = () => {
-    return history.goBack();
-};
+import {
+    RaisedPrimaryBtn,
+    RaisedDefaultBtn,
+    RaisedSecondaryBtn,
+    RaisedDsiabledBtn
+} from "./hoc.js";
 
-const About = () => {
-    return (
-        <div>
-            <button onClick={NavigateBack}>go back</button>
-            this is about page
-        </div>
-    );
-};
-
+const Comp = () => (
+    <div>
+        <RaisedPrimaryBtn />
+        <RaisedDefaultBtn />
+        <RaisedSecondaryBtn />
+        <RaisedDsiabledBtn />
+    </div>
+);
 const App = () => {
     return (
         <Provider store={store}>
             <ConnectedRouter history={history}>
-                <HashRouter basename="/app/crm">
+                {/*<HashRouter basename="/app/crm">*/}
+                <HashRouter>
                     <Switch>
-                        <Route exact path="/" component={TestRouter} />
-                        <Route
-                            path="/router"
-                            component={TestReactInternalStateContainer}
-                        />
-                        <Route path="/about" component={About} />
+                        <Route exact path="/" component={Comp} />
                     </Switch>
                 </HashRouter>
             </ConnectedRouter>
