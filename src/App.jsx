@@ -7,34 +7,18 @@ import { ConnectedRouter } from "react-router-redux";
 import history from "./history";
 import store from "./store";
 import { HashRouter, Switch } from "react-router-dom";
-import TestRouter from "./containers/TestRouter";
-import TestReactInternalStateContainer from "./containers/TestReactInternalStateContainer";
+import { BuildDefaultTable } from "./bo-shared-components/src/ui/Table";
+import { TableConfig } from "./config";
 
-const NavigateBack = () => {
-    return history.goBack();
-};
-
-const About = () => {
-    return (
-        <div>
-            <button onClick={NavigateBack}>go back</button>
-            this is about page
-        </div>
-    );
-};
-
+const UsersTable = BuildDefaultTable(TableConfig);
+const HelloWorld = () => <div>Hello World </div>;
 const App = () => {
     return (
         <Provider store={store}>
             <ConnectedRouter history={history}>
                 <HashRouter basename="/app/crm">
                     <Switch>
-                        <Route exact path="/" component={TestRouter} />
-                        <Route
-                            path="/router"
-                            component={TestReactInternalStateContainer}
-                        />
-                        <Route path="/about" component={About} />
+                        <Route exact path="/" component={UsersTable} />
                     </Switch>
                 </HashRouter>
             </ConnectedRouter>
