@@ -1,12 +1,11 @@
 import React from "react";
 import { Provider } from "react-redux";
 import { Route } from "react-router-dom";
-
 import { ConnectedRouter } from "react-router-redux";
+import { HashRouter, Switch } from "react-router-dom";
 
 import history from "./history";
 import store from "./store";
-import { HashRouter, Switch } from "react-router-dom";
 import { BuildDefaultTable } from "./bo-shared-components/src/ui/Table";
 import { TableConfig } from "./config";
 
