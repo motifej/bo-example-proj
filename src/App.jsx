@@ -6,36 +6,20 @@ import { HashRouter, Switch } from "react-router-dom";
 
 import history from "./history";
 import store from "./store";
+
+// import ResultsTable from "./components/results"
+// import SearchForm from "./components/Search"
+
 import DefaultTable from "./bo-shared-components/src/ui/Table/default-table";
-import { ControlledForm } from "./bo-shared-components/src/ui/Form";
+import FormTemplate from "./bo-shared-components/src/ui/Form";
+import { config } from "./bo-shared-components/src/ui/Form/config";
 import { TableConfig } from "./config";
 
-const BuildTable = (
-    WrappedComponent = ControlledForm,
-    WrappedTable = DefaultTable
-) =>
-    class Subscribe extends WrappedComponent {
-        render() {
-            const url = this.buildURL();
-            return <div>he</div>;
-        }
-    };
-
-const Table = BuildTable();
-
-const About = props => {
-    console.log("props", props);
-    return <div>im about</div>;
+const Results = props => {
+    console.log("results", props);
+    return <div>hello</div>;
 };
-const All = () => {
-    return (
-        <div>
-            <ControlledForm />
-            <About />
-        </div>
-    );
-};
-
+const ShowResults = values => console.log("values", values);
 const App = () => {
     return (
         <Provider store={store}>
@@ -43,8 +27,20 @@ const App = () => {
                 {/* <HashRouter basename="/app/crm"> */}
                 <HashRouter>
                     <div>
-                        <Route exact path="/" component={All} />
-                        <Route path="/results" component={Table} />
+                        <Route
+                            exact
+                            path="/"
+                            render={() => (
+                                <FormTemplate
+                                    config={config}
+                                    onSubmit={ShowResults}
+                                />
+                            )}
+                        />
+                        <Route
+                            path="/about"
+                            render={() => <Results form="SearchForm" />}
+                        />
                     </div>
                 </HashRouter>
             </ConnectedRouter>
