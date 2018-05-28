@@ -23,6 +23,11 @@ const config = {
             name: "isHasDeposit",
             type: "checkbox",
             label: "wo"
+        },
+        {
+            name: "selectme",
+            type: "select",
+            label: "wo"
         }
     ]
 };
