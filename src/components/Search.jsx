@@ -2,20 +2,27 @@ import React from "react";
 import { Redirect } from "react-router";
 import FormTemplate from "../bo-shared-components/src/ui/Form";
 import DefaultTable from "../bo-shared-components/src/ui/Table/default-table";
-import store from "../store";
 import history from "../history";
 
 const config = {
     name: "searchUsers",
     formInputs: [
         {
-            name: "first_name",
-            value: "first_name",
-            label: "First Name"
+            name: "id",
+            type: "text"
         },
         {
-            name: "last_name",
-            value: "last_name"
+            name: "number",
+            type: "number"
+        },
+        {
+            name: "email", // name must be uniqe
+            type: "email"
+        },
+        {
+            name: "isHasDeposit",
+            type: "checkbox",
+            label: "wo"
         }
     ]
 };

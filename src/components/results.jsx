@@ -22,6 +22,7 @@ const config = {
 };
 
 const Results = props => {
+    console.log("propsss", props);
     return (
         <div>
             <DefaultTable state={props.state} header={config.resultsHeader} />
