@@ -1,5 +1,7 @@
 import React from "react";
+import withStyles from "material-ui/styles/withStyles";
 import { Redirect } from "react-router";
+import userSearchFormStyle from "../bo-shared-components/src/ui/Form/style";
 import FormTemplate from "../bo-shared-components/src/ui/Form";
 import DefaultTable from "../bo-shared-components/src/ui/Table/default-table";
 import history from "../history";
@@ -9,25 +11,93 @@ const config = {
     formInputs: [
         {
             name: "id",
-            type: "text"
+            type: "text",
+            grid: {
+                label: {
+                    xs: 12,
+                    ms: 2
+                },
+                field: {
+                    xs: 12,
+                    ms: 9
+                }
+            },
+            label: "Id"
         },
         {
             name: "number",
-            type: "number"
+            type: "number",
+            grid: {
+                label: {
+                    xs: 12,
+                    ms: 2
+                },
+                field: {
+                    xs: 12,
+                    ms: 9
+                }
+            },
+            label: "Number"
         },
         {
             name: "email", // name must be uniqe
-            type: "email"
+            type: "email",
+            grid: {
+                label: {
+                    xs: 12,
+                    ms: 2
+                },
+                field: {
+                    xs: 12,
+                    ms: 9
+                }
+            },
+            label: "Email"
         },
         {
             name: "isHasDeposit",
             type: "checkbox",
-            label: "wo"
+            grid: {
+                label: {
+                    xs: 12,
+                    ms: 2
+                },
+                field: {
+                    xs: 12,
+                    ms: 9
+                }
+            },
+            label: "Im checkbox"
         },
         {
-            name: "selectme",
+            name: "countries",
             type: "select",
-            label: "wo"
+            grid: {
+                label: {
+                    xs: 12,
+                    ms: 2
+                },
+                field: {
+                    xs: 12,
+                    ms: 9
+                }
+            },
+            label: "Im selectbox",
+
+            options: [
+                {
+                    primaryText: "A",
+                    value: "A"
+                },
+                {
+                    primaryText: "B",
+                    value: "B"
+                },
+                {
+                    primaryText: "C",
+                    value: "C"
+                }
+            ]
         }
     ]
 };
@@ -42,3 +112,22 @@ export default Form;
 
 // domain: "http://almond:8081",
 // endPoint: "/accounts?p_count",
+
+// {
+//     name: "countries",
+//     type: "multiSelect",
+//     options: [
+//         {
+//             primaryText: "A",
+//             value: "A"
+//         },
+//         {
+//             primaryText: "B",
+//             value: "B"
+//         },
+//         {
+//             primaryText: "C",
+//             value: "C"
+//         }
+//     ]
+// }
