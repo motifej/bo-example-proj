@@ -2,7 +2,6 @@ import React from "react";
 import withStyles from "material-ui/styles/withStyles";
 import { Redirect } from "react-router";
 import FormTemplate from "../../bo-shared-components/src/ui/Form";
-import Button from "../../bo-shared-components/src/ui/CustomButtons/Button.jsx";
 import GridContainer from "../../bo-shared-components/src/ui/Grid/GridContainer";
 import ItemGrid from "../../bo-shared-components/src/ui/Grid/ItemGrid";
 import HeaderCard from "../../bo-shared-components/src/ui/Cards/HeaderCard";
@@ -27,18 +26,6 @@ const SearchForm = props => {
                     cardTitle="Customers Search"
                     headerColor="blue"
                     content={content}
-                    footer={
-                        <div>
-                            <Button color="info" onClick={clearResults}>
-                                Clear
-                            </Button>
-                            &nbsp;&nbsp;
-                            <Button color="success" onClick={showResults}>
-                                Search
-                            </Button>
-                        </div>
-                    }
-                    footerAlign="center"
                 />
             </ItemGrid>
         </GridContainer>
