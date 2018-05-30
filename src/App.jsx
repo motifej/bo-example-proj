@@ -6,7 +6,7 @@ import { ConnectedRouter } from "react-router-redux";
 import history from "./history";
 import store from "./store";
 
-import Form from "./components/Search";
+import SearchForm from "./components/Search/Search";
 import Results from "./components/results";
 
 const App = () => {
@@ -15,7 +15,7 @@ const App = () => {
             <ConnectedRouter history={history}>
                 <HashRouter>
                     <Switch>
-                        <Route exact path="/" component={Form} />
+                        <Route exact path="/" component={SearchForm} />
                         <Route exact path="/results" component={Results} />
                     </Switch>
                 </HashRouter>
