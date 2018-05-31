@@ -1,4 +1,7 @@
 const searchFormStyle = {
+    wrapper: {
+        backgroundColor:"#EDEDEE"
+    },
     container: {
         paddingRight: "15px",
         paddingLeft: "15px",

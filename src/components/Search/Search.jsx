@@ -20,6 +20,7 @@ const content = <FormTemplate config={config} onSubmit={showResults} />;
 const SearchForm = props => {
     const { classes } = props;
     return (
+        <div className={classes.wrapper}>
         <GridContainer className={classes.container}>
             <ItemGrid xs={12} sm={12} md={12}>
                 <HeaderCard
@@ -29,6 +30,7 @@ const SearchForm = props => {
                 />
             </ItemGrid>
         </GridContainer>
+            </div>
     );
 };
 export default withStyles(searchFormStyle)(SearchForm);
