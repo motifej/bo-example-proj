@@ -5,17 +5,13 @@ import { ConnectedRouter } from "react-router-redux";
 
 import history from "./history";
 import store from "./store";
+import Router from "./router.js";
 
-const About = () => {
-    return <div>abut</div>;
-};
 const App = () => (
     <Provider store={store}>
         <ConnectedRouter history={history}>
             <HashRouter>
-                <Switch>
-                    <Route exact path="/" component={About} />
-                </Switch>
+                <Switch>{Router()}</Switch>
             </HashRouter>
         </ConnectedRouter>
     </Provider>
