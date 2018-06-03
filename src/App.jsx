@@ -6,22 +6,19 @@ import { ConnectedRouter } from "react-router-redux";
 import history from "./history";
 import store from "./store";
 
-import Form from "./components/Search";
-import Results from "./components/results";
-
-const App = () => {
-    return (
-        <Provider store={store}>
-            <ConnectedRouter history={history}>
-                <HashRouter>
-                    <Switch>
-                        <Route exact path="/" component={Form} />
-                        <Route exact path="/results" component={Results} />
-                    </Switch>
-                </HashRouter>
-            </ConnectedRouter>
-        </Provider>
-    );
+const About = () => {
+    return <div>abut</div>;
 };
+const App = () => (
+    <Provider store={store}>
+        <ConnectedRouter history={history}>
+            <HashRouter>
+                <Switch>
+                    <Route exact path="/" component={About} />
+                </Switch>
+            </HashRouter>
+        </ConnectedRouter>
+    </Provider>
+);
 
 export default App;

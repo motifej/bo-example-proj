@@ -1,13 +1,13 @@
 const path = require("path");
 
-const BUILD_DIR = path.join(__dirname, "public");
+const Template = path.join(__dirname, "public", "index.html");
 const APP_DIR = path.join(__dirname, "src");
-
+var HtmlWebpackPlugin = require("html-webpack-plugin");
 const common = {
     entry: path.join(APP_DIR, "/index.jsx"),
     output: {
-        path: BUILD_DIR,
-        filename: "bundle.1.js",
+        path: "/dist",
+        filename: "bundle.[hash].js",
         library: ["test"]
     },
 
@@ -30,7 +30,12 @@ const common = {
     },
     resolve: {
         extensions: [".js", ".jsx"]
-    }
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: Template
+        })
+    ]
 };
 
 module.exports = common;
