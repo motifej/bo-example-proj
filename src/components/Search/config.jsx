@@ -109,7 +109,7 @@ const config = {
             },
             label: "Country",
             options: cities,
-            multiple:false,
+            multiple:true,
             input_id:"country-multi-select"
         },
         {
@@ -127,7 +127,7 @@ const config = {
             },
             label: "Status",
             options: accountStatuses,
-            multiple:false
+            multiple:true
         },
         {
             name: "user_kyc_status",
@@ -144,7 +144,7 @@ const config = {
             },
             label: "KYC Status",
             options: accountKycStatuses,
-            multiple:false
+            multiple:true
         },
         {
             name: "has_deposit",

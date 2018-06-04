@@ -7,7 +7,7 @@ import history from "./history";
 import store from "./store";
 
 import SearchForm from "./components/Search/Search";
-import Results from "./components/results";
+import Results from "./components/ResultsTable/Results";
 
 const App = () => {
     return (

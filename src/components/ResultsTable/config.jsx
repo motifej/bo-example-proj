@@ -1,11 +1,11 @@
-import React from "react";
-import { connect } from "react-redux";
-import { BuildDefaultTable } from "../bo-shared-components/src/ui/Table/index";
-import DefaultTable from "../bo-shared-components/src/ui/Table/default-table";
+const onRowClick = (id) => {
+    console.log('id',id)
+};
 
 const config = {
     domain: "http://almond:8081",
     endPoint: "/accounts",
+    onRowClick: onRowClick,
     resultsHeader: [
         {
             value: "id",
@@ -66,17 +66,4 @@ const config = {
     ]
 };
 
-const Wrapped = BuildDefaultTable(config);
-const Results = props => {
-    return (
-        <div>
-            <Wrapped />
-        </div>
-    );
-};
-
-const mapStateToProps = state => ({
-    state: state.form.SearchForm
-});
-
-export default connect(mapStateToProps)(Results);
+export default config
