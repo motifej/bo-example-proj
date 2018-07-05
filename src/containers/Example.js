@@ -9,7 +9,6 @@ const { url, name } = config.documentService;
 
 export class ExampleContainer extends PureComponent {
   handleSubmit = () => {
-    console.log('submit');
   }
 
   render() {
