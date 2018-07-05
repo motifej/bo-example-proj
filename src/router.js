@@ -1,23 +1,24 @@
-import React from "react";
-import { Route } from "react-router-dom";
-import Home from "./components/Home";
+import React from 'react';
+import { Route } from 'react-router-dom';
+import Example from 'containers/Example';
 
 const routes = [
-    {
-        path: "/",
-        exact: true,
-        component: Home
-    }
+  {
+    id: 1,
+    path: '/',
+    exact: true,
+    component: Example,
+  },
 ];
 
-const Router = () =>
-    routes.map((route, index) => (
-        <Route
-            key={index}
-            exact={route.exact}
-            path={route.path}
-            component={route.component}
-        />
-    ));
+const Router = props =>
+  routes.map(route => (
+    <Route
+      key={route.id}
+      exact={route.exact}
+      path={route.path}
+      render={() => <route.component {...props} />}
+    />
+  ));
 
 export default Router;

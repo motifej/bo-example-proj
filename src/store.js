@@ -1,18 +1,27 @@
-import { createStore, combineReducers, applyMiddleware } from "redux";
-import { routerReducer, routerMiddleware } from "react-router-redux";
-import { reducer as reduxFormReducer } from "redux-form";
-import reducers from "./reducers";
-import history from "./history";
+import 'regenerator-runtime/runtime'; // eslint-disable-line
+import { createStore, applyMiddleware } from 'redux';
+import { routerMiddleware } from 'react-router-redux';
+import { createLogger } from 'redux-logger';
+import createSagaMiddleware from 'redux-saga';
+import sagas from 'sagas';
+import reducer from 'reducers/main';
 
-const middleware = routerMiddleware(history);
+const sagaMiddleware = createSagaMiddleware();
 
-const store = createStore(
-    combineReducers({
-        ...reducers,
-        form: reduxFormReducer,
-        router: routerReducer
+const configurateStore = (history) => {
+  const middlewares = [
+    routerMiddleware(history),
+    sagaMiddleware,
+    createLogger({
+      collapsed: true,
     }),
-    applyMiddleware(middleware)
-);
+  ];
 
-export default store;
+  const store = createStore(reducer, applyMiddleware(...middlewares));
+  sagaMiddleware.run(sagas);
+
+  return store;
+};
+
+
+export default configurateStore;
